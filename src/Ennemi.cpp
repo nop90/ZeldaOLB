@@ -31,7 +31,7 @@ special1(0), special2(0), persistent(p), type_att(ENNEMI), dist(16) {
         else {
             ostringstream im;
             im << id;
-            image = IMG_Load(("romfs:romfs:romfs:romfs:/images/ennemi/ennemi" + im.str() + ".png").c_str());
+            image = IMG_Load(("romfs:/images/ennemi/ennemi" + im.str() + ".png").c_str());
             if (id != 70) 
                 SDL_SetColorKey(image,SDL_SRCCOLORKEY,SDL_MapRGB(image->format,0,0,255));
             chargeIm = true;

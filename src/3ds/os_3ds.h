@@ -73,7 +73,7 @@ void setLanguage(int languageID);
 #define SDLK_w		0
 #define SDLK_x		KEY_Y
 #define SDLK_c		KEY_X
-#define SDLK_SPACE KEY_A
+#define SDLK_SPACE	KEY_A
 #define SDLK_p 		KEY_START
 #define SDLK_m 		0
 #define SDLK_t 		0

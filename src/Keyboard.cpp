@@ -47,7 +47,7 @@ void Keyboard::loadP() {
 }
 
 void Keyboard::loadOldP() {
-    ifstream f("sdmc:/3ds/ZeldaOLB/system.dat",ios::in | ios::binary);
+    ifstream f("sdmc:/3ds/ZeldaROTH/system.dat",ios::in | ios::binary);
     if(!f.is_open()) return;
     int i;
     f.read((char *)&i,sizeof(int));
@@ -133,19 +133,23 @@ int Keyboard::pollKeys(int keys) {
     switch (mode) {
         case 0 :
             gpJoueur = gpJeu->getJoueur();
-            
+
             if ((keys & KMOD_ALT) && (keys & SDLK_F1) && tmp == 0) { 
-               if (gpJoueur->getTypeAnim() == MORT) gpJoueur->revie();
-                else if (!gpJeu->getStop() && !gpJeu->getMenu()) gpJeu->setMenu(true);
+                if (!gpJeu->getStop() && !gpJeu->getMenu()) gpJeu->setMenu(true);
                 else if (gpJeu->getMenu()) gpJeu->setMenu(false);
-                else if (gpJeu->getText()) gpJeu->setText(gpJeu->getTexte()->suite());
                 tmp = 1;
             }
-
+ 
             if ((!(keys&SDLK_F1) && !(keys&SDLK_RETURN) && !gpJeu->getMenu()) || (gpJeu->getMenu() &&
             !(keys&SDLK_F1) && !(keys&SDLK_RETURN) && !(keys&SDLK_LEFT) && !(keys&SDLK_RIGHT) 
             && !(keys&SDLK_UP) && !(keys&SDLK_DOWN))) tmp=0;
-             
+            
+            if (!(keys & KMOD_ALT) && (keys & SDLK_RETURN) && tmp == 0) { 
+               if (gpJoueur->getTypeAnim() == MORT) gpJoueur->revie();
+               else if (gpJeu->getText()) gpJeu->setText(gpJeu->getTexte()->suite());
+               tmp = 1;
+            }
+
             if (gpJeu->getText() && gpJeu->getTexte()->isFinished()) {
                 if(tmpt==0){
                     tmpt=1;
@@ -240,7 +244,7 @@ int Keyboard::pollKeys(int keys) {
                     gpJoueur->moveX(vit, nbdir);
                     avance=1;
                 }
-               if (keys&SDLK_UP) {
+                if (keys&SDLK_UP) {
                     if(!gpJoueur->getCharge()
                     && (!(keys&SDLK_LEFT) || gpJoueur->getDirection()!=O) 
                     && (!(keys&SDLK_RIGHT) || gpJoueur->getDirection()!=E))
@@ -308,13 +312,13 @@ int Keyboard::pollKeys(int keys) {
             if ((gpJoueur->getTypeAnim()==AUCUNE || gpJoueur->getTypeAnim()==MARCHE) 
             && !gpJoueur->getCharge() && gpJoueur->getEpee() && !gpJeu->getStop()
             && !gpJoueur->isLapin() && !gpJoueur->getImmo()) {
-                if (((keys&SDLK_z) || (keys&SDLK_w)) && !tmpw) {
+                if (!(keys & KMOD_ALT) && ((keys&SDLK_z) || (keys&SDLK_w)) && !tmpw) {
                     gpJoueur->setTypeAnim(EPEE);
                     gpJoueur->chargeSpin();
                     tmpw=1;
                 }
                 if (!(keys&SDLK_z) && !(keys&SDLK_w) && tmpw) tmpw=0;
-           }
+            }
             if (!(keys&SDLK_z) && !(keys&SDLK_w) && gpJoueur->getCharge() && !gpJeu->getStop() 
             && !gpJoueur->isLapin()) {
                 if (gpJoueur->getCharge() >= 20) gpJoueur->setTypeAnim(SPIN);
@@ -343,8 +347,8 @@ int Keyboard::pollKeys(int keys) {
             //curseur menu
             if (gpJeu->getMenu() && !gpJoueur->getOni() &&
             (gpJoueur->getTypeAnim()<4 || gpJoueur->getTypeAnim()>20) && tmp==0) {
-               if (keys&SDLK_LEFT) {
-                     int obj = gpJoueur->getObjet();
+                if (keys&SDLK_LEFT) {
+                    int obj = gpJoueur->getObjet();
                     if (obj%3 == 0) gpJoueur->setObjet(obj+2);
                     else gpJoueur->setObjet(obj-1);
                     gpJeu->getAudio()->playSound(3);

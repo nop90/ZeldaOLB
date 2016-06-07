@@ -187,8 +187,15 @@ void Jeu::draw(SDL_Surface* screen) {
     
     gpStatut->draw(screen);
     
-    if (menu || gpMenu->getVal()) gpMenu->draw(screen);
     if (text && !transition) gpTexte->draw(screen);
+}
+
+void Jeu::drawMenu(SDL_Surface* screen) {
+		gpMenu->draw(screen);
+}
+
+Menu* Jeu::getMenuPtr() {
+    return gpMenu;
 }
 
 Joueur* Jeu::getJoueur() {

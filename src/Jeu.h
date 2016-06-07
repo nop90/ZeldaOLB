@@ -35,6 +35,8 @@ class Jeu {
         void init(int save);
         void reinit(int save);
         void draw(SDL_Surface* screen);
+		void drawMenu(SDL_Surface* screen);
+		Menu* getMenuPtr();
         Joueur* getJoueur();
         Monde* getMonde();
         Audio* getAudio();
