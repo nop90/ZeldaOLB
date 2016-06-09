@@ -66,6 +66,7 @@ int main(int argc, char** argv) {
             case 18 : //menu d'aide 2
                 gpJeu->draw(gpScreen);
 				SDL_FillRect(gpScreen, NULL, RGBA8(0, 0, 0, 0x80));
+				break;
             case 0 : //jeu normal
                 gpJeu->draw(gpScreen);
 				if (gpJeu->getMenu()) SDL_FillRect(gpScreen, NULL, RGBA8(0, 0, 0, 0x80));
@@ -118,7 +119,7 @@ int main(int argc, char** argv) {
                 gpGenerique->drawEffacer((SDL_Surface*) 2, gpKeyboard->getLigneVal()); break;
             case 12 : //carte
             case 22 : //carte téléportation
-                gpCarte->draw(gpScreen); break;
+                gpCarte->draw((SDL_Surface*) 2); break;
 				if (gpJeu->getMenuPtr()->getVal() == 200) gpJeu->getMenuPtr()->menuOut(); 
 				gpJeu->drawMenu((SDL_Surface*) 2);
 				break;

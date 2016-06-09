@@ -30,8 +30,16 @@ chmax(0) {
 }
 
 Projectile::~Projectile() {
-    SDL_FreeSurface(image);
+    if(image) SDL_FreeSurface(image);
+	if(suivant)	{
+		Projectile* temp;
+		temp = (Projectile*)suivant;
+		suivant=NULL;
+		delete temp;
+	}
 }
+
+
 
 void Projectile::draw(SDL_Surface* gpScreen) {
     if (id == 3 && (gpJeu->getJoueur()->getTypeAnim()==TOUCHE 
@@ -137,9 +145,11 @@ void Projectile::draw(SDL_Surface* gpScreen) {
         }
     }
     
-    
-    
-    if (suivant != NULL) if (((Projectile*)suivant)->vie == 0) enleve(suivant);
+    if (suivant != NULL) if (((Projectile*)suivant)->vie == 0){
+		if(((Projectile*)suivant)->image) SDL_FreeSurface(((Projectile*)suivant)->image);
+		((Projectile*)suivant)->image = 0;
+		enleve(suivant);
+	}
     if (suivant != NULL) ((Projectile*)suivant)->draw(gpScreen);
 }
 

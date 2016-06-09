@@ -71,28 +71,28 @@ void Jeu::init(int save) {
 
 void Jeu::reinit(int save) {
     zone=29;
-    delete gpProjectile;
+    if(gpProjectile) delete gpProjectile;
     gpProjectile = new Projectile(this, 0, N, 0, 0, 0);
-	delete gpObjet;
+	if(gpObjet) delete gpObjet;
     gpObjet = new Objet(this, 0, 0, 0, 0);
-    delete gpSnipe;
+    if(gpSnipe) delete gpSnipe;
 	gpSnipe = new Snipe(this, 0, 0, 0, 0, 0);
-    delete gpCaisse;
+    if(gpCaisse) delete gpCaisse;
 	gpCaisse = new Caisse(this, 0, 0, 0);
-    delete gpEnnemi;
+    if(gpEnnemi) delete gpEnnemi;
 	gpEnnemi = new Ennemi(this, 0, 0, 0, true);
-    delete gpPiege;
+    if(gpPiege) delete gpPiege;
 	gpPiege = new Ennemi(this, 0, 0, 0, true);
-    delete gpPnj;
+    if(gpPnj) delete gpPnj;
 	gpPnj = new Pnj(this, 0, 0, 0, 0);
-    delete gpJoueur;
+    if(gpJoueur) delete gpJoueur;
 	gpJoueur = new Joueur(this, save);
-    delete gpMonde;
+    if(gpMonde) delete gpMonde;
 	gpMonde = new Monde(this);
-    delete gpMenu;
+    if(gpMenu) delete gpMenu;
 	gpMenu = new Menu(this);
     //gpTexte = new Texte(this);
-    delete gpStatut;
+    if(gpStatut) delete gpStatut;
 	gpStatut = new Statut(this);
     //gpAudio->playMusic(zone);
     if (zone != 55 || gpJoueur->getAvancement()<65)gpAudio->playMusic(zone);
@@ -2122,8 +2122,9 @@ int Jeu::enleve() {
 
 void Jeu::setMenu(bool b) {
     menu = b;
-    if (!menu) gpMenu->menuOut();
-    else {stop = true; gpMenu->menuIn();}
+	stop = menu;
+//    if (!menu) gpMenu->menuOut();
+//    else {stop = true; gpMenu->menuIn();}
 }
 
 void Jeu::ecrit(int id, bool anim, bool cadre, int x, int y, int w, int h) {

@@ -28,6 +28,7 @@ avancement(0), tutoriel(0), invisible(false), dirglisse(0), dirglace(0), glace(0
 glisse(0), vitesse(0), oldxg(0), oldyg(0), immo(false), loader(false), verse(0),
 raplaplat(0), asile(0), gel(0) {
     image = NULL;
+	imageTmp = NULL;
     imageSpin = IMG_Load("romfs:/images/link/spin.png");
     SDL_SetColorKey(imageSpin,SDL_SRCCOLORKEY,SDL_MapRGB(imageSpin->format,0,0,255));
     imageObjets = IMG_Load("romfs:/images/link/objets.png");
@@ -117,10 +118,18 @@ raplaplat(0), asile(0), gel(0) {
 }
 
 Joueur::~Joueur() {
-    delete boucl;
+    if(boucl) delete boucl;
     SDL_FreeSurface(imageEpee);
     SDL_FreeSurface(imageSpin);
     SDL_FreeSurface(imageObjets);
+    if(image) SDL_FreeSurface(image);
+    if(imageTmp) SDL_FreeSurface(imageTmp);
+	if(suivant)	{
+		Joueur* temp;
+		temp = (Joueur*)suivant;
+		suivant=NULL;
+		delete temp;
+	}
 }
 
 //sauvegarde
@@ -310,7 +319,8 @@ void Joueur::draw2(int i, int j, SDL_Surface* gpScreen) {
 void Joueur::draw(SDL_Surface* gpScreen) {
     
     if (!getOnilink() && getAvancement()==16) {
-        imageTmp = IMG_Load("romfs:/images/ennemi/ennemi75.png");
+        if(imageTmp) SDL_FreeSurface(imageTmp);
+		imageTmp = IMG_Load("romfs:/images/ennemi/ennemi75.png");
         SDL_SetColorKey(imageTmp,SDL_SRCCOLORKEY,SDL_MapRGB(imageTmp->format,0,0,255));
     }
     if (getAvancement()>=16 && getAvancement()<62) {
@@ -322,7 +332,8 @@ void Joueur::draw(SDL_Surface* gpScreen) {
         SDL_Rect dst; dst.x=x-(avancement-16)*2-gpJeu->getPhg(0); dst.y=y-gpJeu->getPhg(1);
         SDL_BlitSurface(imageTmp, &src, gpScreen, &dst);
         if (getAvancement() == 63) {
-            SDL_FreeSurface(imageTmp);
+            if(imageTmp) SDL_FreeSurface(imageTmp);
+			imageTmp=NULL;
             setImmo(false);
             gpJeu->getAudio()->playSound(5);
             SDL_Delay(2500);
@@ -710,6 +721,7 @@ void Joueur::setBouclier(int b) {
     if (!bouclier) return;
     std::ostringstream im;
     im << bouclier;
+    if(image) SDL_FreeSurface(image);
     if (oni) {
         if (hasObjet(O_MASQUE)==2) 
            boucl = new Bouclier(IMG_Load("romfs:/images/link/bouclierOni2.png"), 10);
@@ -720,7 +732,7 @@ void Joueur::setBouclier(int b) {
 
 void Joueur::setTunique(int t) {
     tunique = t;
-    SDL_FreeSurface(image);
+    if(image) SDL_FreeSurface(image);
     std::ostringstream im;
     im << tunique;
     if (oni) image = IMG_Load("romfs:/images/link/onilink.png");

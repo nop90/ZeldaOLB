@@ -457,6 +457,7 @@ int Keyboard::pollKeys(int keys) {
             (gpJeu->isDehors() || gpJeu->isDonjon())
             && !gpJeu->getStop() && gpJoueur->getVie()>0 && !tmpp) {
                 mode = 12;
+ 				gpJeu->setStop(true);
                 gpJeu->getAudio()->playSound(1);
                 gpCarte->init();
                 tmpp=1;
@@ -822,6 +823,7 @@ int Keyboard::pollKeys(int keys) {
         case 18 :
             if ((keys&SDLK_RETURN) && !tmp) {
                 mode = 0;
+				gpJeu->setStop(false);
                 gpJeu->getAudio()->playSound(2);
                 tmp=1;
             }

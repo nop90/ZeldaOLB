@@ -53,6 +53,8 @@ Generique::~Generique() {
     SDL_FreeSurface(imageFond1);
     SDL_FreeSurface(imageFond2);
     for (int i = 0; i < 5; i++) SDL_FreeSurface(imageIntro[i]);
+    SDL_FreeSurface(imageBackground);
+    SDL_FreeSurface(imageFlags);
 }
 
 void Generique::drawFin(SDL_Surface* gpScreen) {
@@ -212,12 +214,13 @@ void Generique::initOption() {
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
     cadre(16,64,288,32);
-    cadre(16,128,288,32);
+    cadre(16,107,288,32);
+    cadre(16,150,288,32);
     cadre(16,192,136,32);
     
     gpJeu->affiche(image, "OPTIONS", 40, 16);
     gpJeu->affiche(image, "MUSIC", 60, 72);
-    gpJeu->affiche(image, "SOUNDS", 60, 136);
+    gpJeu->affiche(image, "SOUNDS", 60, 115);
     gpJeu->affiche(image, "RETURN", 63, 200);
     
     src.x = 0; src.y = 96; dst.x = 128; dst.y = 72; 
@@ -229,13 +232,13 @@ void Generique::initOption() {
     src.x = 32; src.y = 96; dst.x = 264; dst.y = 72; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     
-    src.x = 0; src.y = 96; dst.x = 128; dst.y = 136; 
+    src.x = 0; src.y = 96; dst.x = 128; dst.y = 115; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     for (int i = 144; i < 264; i+=16) {
-        src.x = 16; src.y = 96; dst.x = i; dst.y = 136; 
+        src.x = 16; src.y = 96; dst.x = i; dst.y = 115; 
         SDL_BlitSurface(imageCadre, &src, image, &dst);
     }
-    src.x = 32; src.y = 96; dst.x = 264; dst.y = 136; 
+    src.x = 32; src.y = 96; dst.x = 264; dst.y = 115; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
 }
 

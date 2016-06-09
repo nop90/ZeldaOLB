@@ -19,8 +19,15 @@ viemax(1), invincible(0), type(0), direction(S), h(0), w(0), anim(0), animmax(0)
 }
 
 Personnage::~Personnage() {
-    SDL_FreeSurface(image);
+    if(image) SDL_FreeSurface(image);
+	image=0;
     delete gpZoneBase;
+	if(suivant)	{
+		Personnage* temp;
+		temp = (Personnage*)suivant;
+		suivant=NULL;
+		delete temp;
+	}
 }
 
 void Personnage::saveEmpl() {
