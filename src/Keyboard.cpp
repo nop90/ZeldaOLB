@@ -17,7 +17,7 @@
 Keyboard::Keyboard(Jeu* jeu, Carte* carte, Encyclopedie* encycl, SDL_Surface* screen, int m) : 
     gpJeu(jeu), gpCarte(carte), gpEncyclopedie(encycl), mode(m), gFullScreen(1), 
     gpScreen(screen), tmp(0), tmpx(0), tmpc(0), tmpw(0), tmpt(0), tmpp(0), tmpm(0), tmpo(0), 
-    tmptp(0), ligne(0), colonne(0), ligneOption(2), volume(32), volson(32), ligneRecord(3), 
+    tmptp(0), ligne(0), colonne(0), ligneOption(3), volume(64), volson(64), ligneRecord(3), 
     colonneRecord(0), temps(0), ligneVal(0), intro(0), telep(0) {
     for (int i = 0; i < 3; i++) save[i]=0;
     for (int i = 0; i < 6; i++) rang[i]=0;
@@ -144,7 +144,12 @@ int Keyboard::pollKeys(int keys) {
             !(keys&SDLK_F1) && !(keys&SDLK_RETURN) && !(keys&SDLK_LEFT) && !(keys&SDLK_RIGHT) 
             && !(keys&SDLK_UP) && !(keys&SDLK_DOWN))) tmp=0;
             
-            if (!(keys & KMOD_ALT) && (keys & SDLK_RETURN) && tmp == 0) { 
+            if (keys&SDLK_SPACE && !gpJeu->getStop() && gpJoueur->getVie() && 
+            (gpJoueur->getTypeAnim()==AUCUNE || gpJoueur->getTypeAnim()==MARCHE) 
+             && !gpJoueur->getImmo()  && tmp == 0) {
+                gpJeu->lire();
+                tmp = 1;
+            } else if (!(keys & KMOD_ALT) && (keys & SDLK_RETURN) && tmp == 0) { 
                if (gpJoueur->getTypeAnim() == MORT) gpJoueur->revie();
                else if (gpJeu->getMenu()) gpJeu->setMenu(false);
                else if (gpJeu->getText()) gpJeu->setText(gpJeu->getTexte()->suite());
@@ -378,8 +383,6 @@ int Keyboard::pollKeys(int keys) {
                 }
             }
             
-            
-            
             if (!(keys & KMOD_ALT) &&(keys&SDLK_x) && (
             gpJoueur->getTypeAnim()==AUCUNE || gpJoueur->getTypeAnim()==MARCHE || 
             (gpJoueur->getObjet()==8 && 
@@ -448,13 +451,7 @@ int Keyboard::pollKeys(int keys) {
             
             if (!(keys&SDLK_c) && tmpc) tmpc=0;
             
-            if (keys&SDLK_SPACE && !gpJeu->getStop() && gpJoueur->getVie() && 
-            (gpJoueur->getTypeAnim()==AUCUNE || gpJoueur->getTypeAnim()==MARCHE) 
-             && !gpJoueur->getImmo()) {
-                gpJeu->lire();
-            }
-            
-            if (keys&SDLK_p && (gpJoueur->hasObjet(O_CARTE) || gpJeu->isDonjon()) && 
+            if (!(keys & KMOD_ALT) && keys&SDLK_p && (gpJoueur->hasObjet(O_CARTE) || gpJeu->isDonjon()) && 
             (gpJeu->isDehors() || gpJeu->isDonjon())
             && !gpJeu->getStop() && gpJoueur->getVie()>0 && !tmpp) {
                 mode = 12;

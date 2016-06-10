@@ -53,7 +53,7 @@ raplaplat(0), asile(0), gel(0) {
     gpZoneBase->getZone()->h=16;
     imageEpee = NULL;
     
-    load();
+	load();
     
     if (oni && !onilink) objet=8;
     
@@ -65,8 +65,7 @@ raplaplat(0), asile(0), gel(0) {
     calculDef();
     
     TimeB = SDL_GetTicks();
-    
-    
+	
     // pour ROTH
     //objets[O_SAC_BOMBES]=1;
     //objets[O_BOTTES]=1;

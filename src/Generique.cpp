@@ -219,11 +219,6 @@ void Generique::initOption() {
     cadre(16,150,288,32);
     cadre(16,192,136,32);
     
-    gpJeu->affiche(image, "OPTIONS", 40, 16);
-    gpJeu->affiche(image, "MUSIC", 60, 72);
-    gpJeu->affiche(image, "SOUNDS", 60, 115);
-    gpJeu->affiche(image, "RETURN", 63, 200);
-    
     src.x = 0; src.y = 96; dst.x = 128; dst.y = 72; 
     SDL_BlitSurface(imageCadre, &src, image, &dst);
     for (int i = 144; i < 264; i+=16) {
@@ -716,7 +711,7 @@ void Generique::drawSelection(SDL_Surface* gpScreen, int ligne, int colonne) {
     draw(gpScreen);
     SDL_Rect src;
     SDL_Rect dst;
-    
+ 
     src.h = 21; src.w = 16;src.x = 0;src.y=0;
     dst.x = 26+152*colonne; dst.y = 53+48*ligne;
     
@@ -728,18 +723,30 @@ void Generique::drawOption(SDL_Surface* gpScreen, int ligne, int opt1, int opt2)
     SDL_Rect src;
     SDL_Rect dst;
     
+    gpJeu->affiche(gpScreen, "OPTIONS", 40, 16);
+    gpJeu->affiche(gpScreen, "MUSIC", 60, 72);
+    gpJeu->affiche(gpScreen, "SOUNDS", 60, 115);
+    gpJeu->affiche(gpScreen, "LANGUAGE", 60, 158);
+    gpJeu->affiche(gpScreen, "English", 170, 158);
+    gpJeu->affiche(gpScreen, "RETURN", 63, 200);
+	
+	int languageID = getLanguage();
+	//if (languageID<1 || languageID>5) 
+		languageID = 1;
+
     src.h = 21; src.w = 16;src.x = 0;src.y=0;
-    dst.x = 26; dst.y = 69+64*ligne;
+    dst.x = 26; dst.y = 69+43*ligne;
     
     SDL_BlitSurface(imageCurseur, &src, gpScreen, &dst);
     
     src.h = 16; src.w = 8;src.x = 0;src.y=0;
-    dst.x = 136+16*opt1; dst.y = 56+16;
+    dst.x = 136+8*opt1; dst.y = 56+16;
     SDL_BlitSurface(imageNiveau, &src, gpScreen, &dst);
                 
     src.h = 16; src.w = 8;src.x = 0;src.y=0;
-    dst.x = 136+16*opt2; dst.y = 56+16+64;
+    dst.x = 136+8*opt2; dst.y = 56+16+43;
     SDL_BlitSurface(imageNiveau, &src, gpScreen, &dst);
+	drawFlag(gpScreen, languageID);
 }
 
 void Generique::drawRecord(SDL_Surface* gpScreen, int ligne, int colonne) {

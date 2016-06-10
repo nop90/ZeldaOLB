@@ -24,10 +24,10 @@
 Menu::Menu(Jeu* jeu) : gpJeu(jeu), sens(0), val(0), anim(0) {
     lastAnimTime = SDL_GetTicks();
     
-    imageCadre = IMG_Load("data/images/menu/bord.png");
-    imageCoeur = IMG_Load("data/images/menu/coeur.png");
-    imageObjets = IMG_Load("data/images/statut/objets.png");
-    imageInventaire = IMG_Load("data/images/statut/inventaire.png");
+    imageCadre = IMG_Load("romfs:/images/menu/bord.png");
+    imageCoeur = IMG_Load("romfs:/images/menu/coeur.png");
+    imageObjets = IMG_Load("romfs:/images/statut/objets.png");
+    imageInventaire = IMG_Load("romfs:/images/statut/inventaire.png");
     
     SDL_SetColorKey(imageCadre,SDL_SRCCOLORKEY,SDL_MapRGB(imageCadre->format,0,0,255));
     SDL_SetColorKey(imageCoeur,SDL_SRCCOLORKEY,SDL_MapRGB(imageCoeur->format,0,0,255));
