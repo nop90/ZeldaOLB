@@ -54,6 +54,9 @@ FILE* openFile(const char* fn, const char* mode)
 
 void* bufferizeFile(const char* filename, u32* size, bool binary, bool linear)
 {
+		return NULL;
+/// Remove above when implemented sound
+
 	FILE* file;
 	
 	if(!binary)file = openFile(filename, "r");

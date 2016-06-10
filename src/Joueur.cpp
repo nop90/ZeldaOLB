@@ -122,14 +122,8 @@ Joueur::~Joueur() {
     SDL_FreeSurface(imageEpee);
     SDL_FreeSurface(imageSpin);
     SDL_FreeSurface(imageObjets);
-    if(image) SDL_FreeSurface(image);
+//    if(image) SDL_FreeSurface(image);
     if(imageTmp) SDL_FreeSurface(imageTmp);
-	if(suivant)	{
-		Joueur* temp;
-		temp = (Joueur*)suivant;
-		suivant=NULL;
-		delete temp;
-	}
 }
 
 //sauvegarde
@@ -721,7 +715,7 @@ void Joueur::setBouclier(int b) {
     if (!bouclier) return;
     std::ostringstream im;
     im << bouclier;
-    if(image) SDL_FreeSurface(image);
+//    if(image) SDL_FreeSurface(image);
     if (oni) {
         if (hasObjet(O_MASQUE)==2) 
            boucl = new Bouclier(IMG_Load("romfs:/images/link/bouclierOni2.png"), 10);
@@ -767,7 +761,8 @@ int Joueur::nbQuarts() {
 
 int Joueur::nbCristaux() {
     int total = 0;
-    for (int i = 0; i < 7; i++) total += cristaux[i];
+//    for (int i = 0; i < 7; i++) total += cristaux[i];
+    for (int i = 0; i < 5; i++) total += cristaux[i];
     return total;
 }
 

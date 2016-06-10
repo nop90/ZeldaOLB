@@ -117,8 +117,8 @@ int Keyboard::pollKeys(int keys) {
 
 		if ( (keys &  SDLK_x) && mode == 0) {
 			mode = 17; 
-			gpJeu->setStop(true);
 			gpJeu->getGenerique()->initAide1(); 
+			gpJeu->setStop(true);
 			gpJeu->getAudio()->playSound(1);
 		}
         if (keys & SDLK_F4) return -1;
@@ -146,6 +146,7 @@ int Keyboard::pollKeys(int keys) {
             
             if (!(keys & KMOD_ALT) && (keys & SDLK_RETURN) && tmp == 0) { 
                if (gpJoueur->getTypeAnim() == MORT) gpJoueur->revie();
+               else if (gpJeu->getMenu()) gpJeu->setMenu(false);
                else if (gpJeu->getText()) gpJeu->setText(gpJeu->getTexte()->suite());
                tmp = 1;
             }

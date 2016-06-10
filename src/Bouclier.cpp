@@ -19,7 +19,7 @@ Bouclier::Bouclier(SDL_Surface* img, int id) : image(img), type(id) {
 
 Bouclier::~Bouclier() {
     SDL_FreeSurface(image);
-    delete zone;
+    if(zone) delete zone;
 }
 
 void Bouclier::draw(SDL_Surface* screen, int x, int y, ZoneRect* z, int direction) {
@@ -95,6 +95,6 @@ void Bouclier::draw(SDL_Surface* screen, int x, int y, ZoneRect* z, int directio
 }
 
 void Bouclier::setZone(ZoneRect* z) {
-    delete zone;
+    if(zone) delete zone;
     zone = z;
 }

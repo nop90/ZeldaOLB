@@ -172,8 +172,9 @@ void Generique::initSelection() {
             if (gpJoueur->getEnnemi(50)) SDL_BlitSurface(objets, &src, image, &dst);
             
             gpJeu->getKeyboard()->setSave(i,1);
-        }else gpJeu->getKeyboard()->setSave(i,0);
-    }
+        } else gpJeu->getKeyboard()->setSave(i,0);
+		delete gpJoueur;
+	}
     
     SDL_FreeSurface(objets);
     SDL_FreeSurface(imageStat);
