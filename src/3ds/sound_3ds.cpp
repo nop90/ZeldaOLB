@@ -54,9 +54,6 @@ FILE* openFile(const char* fn, const char* mode)
 
 void* bufferizeFile(const char* filename, u32* size, bool binary, bool linear)
 {
-		return NULL;
-/// Remove above when implemented sound
-
 	FILE* file;
 	
 	if(!binary)file = openFile(filename, "r");
@@ -161,13 +158,12 @@ void FMUSIC_PlaySong(FMUSIC_MODULE* s)
 
 FSOUND_SAMPLE* FSOUND_Sample_Load(int flag, const char * f,int a, int b, int c)
 {
-	return NULL;
 	int i;
 	for(i=0;i<NUMSFX;i++)
 	{
 		if(!SFX[i].used)
 		{
-			//loadSFX(&SFX[i], f, SOUND_FORMAT_16BIT);
+			loadSFX(&SFX[i], f, SOUND_FORMAT_16BIT);
 
 			if(!SFX[i].data)return NULL;
 			SFX[i].used = true;
@@ -180,14 +176,13 @@ FSOUND_SAMPLE* FSOUND_Sample_Load(int flag, const char * f,int a, int b, int c)
 
 FMUSIC_MODULE* FMUSIC_LoadSong(const char * f)
 {
-	return NULL;
 	int size;
 	int i;
 	for(i=0;i<NUMSFX;i++)
 	{
 		if(!SFX[i].used)
 		{
-			//loadSFX(&SFX[i], f, SOUND_FORMAT_16BIT);
+			loadSFX(&SFX[i], f, SOUND_FORMAT_16BIT);
 			
 			if(!SFX[i].data) return NULL;
 			SFX[i].used = true;
