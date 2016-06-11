@@ -161,6 +161,7 @@ void FMUSIC_PlaySong(FMUSIC_MODULE* s)
 
 FSOUND_SAMPLE* FSOUND_Sample_Load(int flag, const char * f,int a, int b, int c)
 {
+	return NULL;
 	int i;
 	for(i=0;i<NUMSFX;i++)
 	{
@@ -179,6 +180,7 @@ FSOUND_SAMPLE* FSOUND_Sample_Load(int flag, const char * f,int a, int b, int c)
 
 FMUSIC_MODULE* FMUSIC_LoadSong(const char * f)
 {
+	return NULL;
 	int size;
 	int i;
 	for(i=0;i<NUMSFX;i++)
