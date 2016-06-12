@@ -286,7 +286,7 @@ void Menu::drawInventaire(SDL_Surface* gpScreen) {
     
     Joueur* gpJoueur = gpJeu->getJoueur();
     
-    gpJeu->affiche(gpScreen, "X", 20-dec,20);
+    gpJeu->affiche(gpScreen, "Y", 20-dec,20);
 
     SDL_Rect src;
     SDL_Rect dst;
@@ -414,12 +414,46 @@ void Menu::drawStatut(SDL_Surface* gpScreen) {
     int i = 36;
     if (!gpJoueur->hasObjet(O_LANTERNE) || !gpJoueur->getOnilink()) i+=8;
     
-    gpJeu->affiche(gpScreen, "STATUS :", 148,20-dec);
+switch(getLanguage()) {
+case 2: // French
+    gpJeu->affiche(gpScreen, "STATUT:", 148,20-dec);
+break;
+
+/*
+case 4: // Italian
+    gpJeu->affiche(gpScreen, "STATO:", 148,20-dec);
+break;
+*/
+case 5: // Spanish
+    gpJeu->affiche(gpScreen, "ESTATUTO:", 148,20-dec);
+break;
+
+default:
+    gpJeu->affiche(gpScreen, "STATUS:", 148,20-dec);
+break;	
+}
+
     int v = gpJoueur->getVie();
     int vm = gpJoueur->getVieMax();
     if (v < 10) oss<<"0"; oss << v << "/";
     if (vm < 10) oss<<"0"; oss << vm;
-    gpJeu->affiche(gpScreen, "LIFE      : " + oss.str(), 148,i-dec);
+switch(getLanguage()) {
+case 2: // French
+    gpJeu->affiche(gpScreen, "VIE       : " + oss.str(), 148,36-dec+8);
+break;
+
+/*case 4: // Italian
+    gpJeu->affiche(gpScreen, "VITA      : " + oss.str(), 148,36-dec+8);
+break;
+*/
+case 5: // Spanish
+    gpJeu->affiche(gpScreen, "VIDA      : " + oss.str(), 148,36-dec+8);
+break;
+
+default:
+    gpJeu->affiche(gpScreen, "LIFE      : " + oss.str(), 148,36-dec+8);
+break;	
+}
     i+=16;
     
     
@@ -429,7 +463,23 @@ void Menu::drawStatut(SDL_Surface* gpScreen) {
         int mm = gpJoueur->getMagieMax();
         if (m < 10) oss<<"0"; oss << m << "/";
         if (mm < 10) oss<<"0"; oss << mm;
+switch(getLanguage()) {
+case 2: // French
+        gpJeu->affiche(gpScreen, "MAGIE     : " + oss.str(), 148,i-dec);
+break;
+
+/*case 4: // Italian
+        gpJeu->affiche(gpScreen, "MAGIA     : " + oss.str(), 148,i-dec);
+break;
+*/
+case 5: // Spanish
+        gpJeu->affiche(gpScreen, "MAGIA     : " + oss.str(), 148,i-dec);
+break;
+
+default:
         gpJeu->affiche(gpScreen, "MAGIC     : " + oss.str(), 148,i-dec);
+break;	
+}
         i+=16;
     }
     
@@ -445,11 +495,44 @@ void Menu::drawStatut(SDL_Surface* gpScreen) {
     
     oss.str("");
     oss << gpJoueur->getForce();
-    gpJeu->affiche(gpScreen, "STRENGHT  : " + oss.str(), 148,i-dec);
+switch(getLanguage()) {
+case 2: // French
+    gpJeu->affiche(gpScreen, "FORCE     : " + oss.str(), 148,i-dec);
+break;
+
+/*case 4: // Italian
+    gpJeu->affiche(gpScreen, "FORZA     : " + oss.str(), 148,i-dec);
+break;
+*/
+case 5: // Spanish
+    gpJeu->affiche(gpScreen, "STRENGTH  : " + oss.str(), 148,i-dec);
+break;
+
+default:
+    gpJeu->affiche(gpScreen, "STRENGTH  : " + oss.str(), 148,i-dec);
+break;	
+}
     i+=16;
     oss.str("");
     oss << gpJoueur->getDefense();
+switch(getLanguage()) {
+case 2: // French
     gpJeu->affiche(gpScreen, "DEFENSE   : " + oss.str(), 148,i-dec);
+break;
+
+/*
+case 4: // Italian
+    gpJeu->affiche(gpScreen, "DIFESA    : " + oss.str(), 148,i-dec);
+break;
+*/
+case 5: // Spanish
+    gpJeu->affiche(gpScreen, "DEFENSA   : " + oss.str(), 148,i-dec);
+break;
+
+default:
+    gpJeu->affiche(gpScreen, "DEFENSE   : " + oss.str(), 148,i-dec);
+break;	
+}
     i+=16;
     oss.str("");
     int h = gpJoueur->getTemps(2);
@@ -458,7 +541,24 @@ void Menu::drawStatut(SDL_Surface* gpScreen) {
     if (h < 10) oss<<"0"; oss << h << ":";
     if (m < 10) oss<<"0"; oss << m << ":";
     if (s < 10) oss<<"0"; oss << s;
+switch(getLanguage()) {
+case 2: // French
+    gpJeu->affiche(gpScreen, "TEMPS     : " + oss.str(), 148,i-dec);
+break;
+
+/*
+case 4: // Italian
+    gpJeu->affiche(gpScreen, "TEMPO     : " + oss.str(), 148,i-dec);
+break;
+*/
+case 5: // Spanish
+    gpJeu->affiche(gpScreen, "TIEMPO    : " + oss.str(), 148,i-dec);
+break;
+
+default:
     gpJeu->affiche(gpScreen, "TIME      : " + oss.str(), 148,i-dec);
+break;	
+}
 
     SDL_Rect src;
     SDL_Rect dst;

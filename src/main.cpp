@@ -81,6 +81,7 @@ int main(int argc, char** argv) {
             case 7 : //charger partie
             case 9 : //effacer partie
             case 15 : //records
+            case 16 : //effacer record
             case 19 : //rang 100%
             case 20 : //rang ultime
             case 21 : //rang de rapidité
@@ -91,8 +92,6 @@ int main(int argc, char** argv) {
                 gpGenerique->drawDebut(gpScreen); break;
             case 11 : //générique fin
                 gpGenerique->drawFin(gpScreen); break;
-            case 16 : //effacer record
-                gpGenerique->drawEffacer(gpScreen, gpKeyboard->getLigneVal()); break;
             default : break;
         }
 

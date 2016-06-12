@@ -28,21 +28,28 @@ Keyboard::Keyboard(Jeu* jeu, Carte* carte, Encyclopedie* encycl, SDL_Surface* sc
 }
 
 void Keyboard::saveP() {
+	int languageID = getLanguage();
     ofstream f("sdmc:/3ds/ZeldaOLB/system.dat",ios::out | ios::binary);
     f.write((char *)&volume,sizeof(int));
     f.write((char *)&volson,sizeof(int));
     f.write((char *)&temps,sizeof(int));
     for (int i = 0; i < 3; i++) f.write((char *)&rang[3+i],sizeof(int));
+    f.write((char *)&languageID,sizeof(int));
     f.close();
 }
 
 void Keyboard::loadP() {
+	int languageID = 0;
     ifstream f("sdmc:/3ds/ZeldaOLB/system.dat",ios::in | ios::binary);
     if(!f.is_open()) return;
     f.read((char *)&volume,sizeof(int));
     f.read((char *)&volson,sizeof(int));
     f.read((char *)&temps,sizeof(int));
     for (int i = 0; i < 3; i++) f.read((char *)&rang[3+i],sizeof(int));
+    if(!f.eof()){ //for retro compatibility
+		 f.read((char *)&languageID,sizeof(int));
+		 setLanguage(languageID);  
+ 	}
     f.close();
 }
 
@@ -601,7 +608,9 @@ int Keyboard::pollKeys(int keys) {
                     gpJeu->getAudio()->setVolson(volson); 
 					gpJeu->getAudio()->playSound(3);}
                 if (ligneOption == 2) {
-                    setLanguage(getLanguage()-1);tmp=1;
+                    if (getLanguage()==5) setLanguage(2); 
+					else setLanguage(getLanguage()-1);
+					tmp=1;
                     gpJeu->getAudio()->playSound(3);}}
             if ((keys&SDLK_RIGHT) && !tmp) {
                 if (ligneOption == 0) {
@@ -615,7 +624,9 @@ int Keyboard::pollKeys(int keys) {
                     volson+=64; if (volson > 64) volson = 64; tmp=1;
                     gpJeu->getAudio()->setVolson(volson);gpJeu->getAudio()->playSound(3);}
                 if (ligneOption == 2) {
-                    setLanguage(getLanguage()+1);tmp=1;
+					if (getLanguage()==2) setLanguage(5); 
+					else setLanguage(getLanguage()+1);
+					tmp=1;
                     gpJeu->getAudio()->playSound(3);}}
 
             if (!(keys&SDLK_RETURN) && !(keys&SDLK_UP) && !(keys&SDLK_DOWN) 
