@@ -484,7 +484,7 @@ int Keyboard::pollKeys(int keys) {
             // monsters screen related
             if (!((keys&SDLK_z)) && tmpm) tmpm=0;
             
-            if (keys&SDLK_o && gpJoueur->hasObjet(O_MASQUE)==2 && !gpJoueur->isLapin() && !tmpo
+            if ((keys & KMOD_ALT) && keys&SDLK_o && gpJoueur->hasObjet(O_MASQUE)==2 && !gpJoueur->isLapin() && !tmpo
             && !gpJeu->getStop() && !gpJoueur->getImmo() && gpJoueur->getVie()>0) {
                 if (gpJeu->isVillage(gpJoueur->getX(),gpJoueur->getY())) {
                     gpJeu->ecrit(128); }
@@ -500,7 +500,7 @@ int Keyboard::pollKeys(int keys) {
             if (!(keys&SDLK_o) && tmpo) tmpo=0;
             
             
-            if (keys&SDLK_t && gpJoueur->getOni() && !gpJoueur->isLapin()
+            if ((keys & KMOD_ALT) && keys&SDLK_t && gpJoueur->getOni() && !gpJoueur->isLapin()
             && gpJeu->isDonjon() && !tmptp
             && !gpJeu->getStop() && !gpJoueur->getImmo() && gpJoueur->getVie()>0) {
                 gpJeu->getAudio()->playSound(5);
