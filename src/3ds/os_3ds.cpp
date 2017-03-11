@@ -84,6 +84,13 @@ int SDL_GetKeyState(void* p)
 	return hidKeysHeld();
 }
 
+int WaitKey()
+{
+    while (!hidKeysDown()) hidScanInput();
+	
+	return hidKeysDown(); 	
+}
+
 int getLanguage(void)
 {
 	return language;
