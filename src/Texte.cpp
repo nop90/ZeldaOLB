@@ -48,7 +48,7 @@ case 2: // French
             break;
         case 5 : texte = "Grotte du portail scellé.**Entrée interdite."; break;
         case 6 : texte = "Temple de Firone**Sauvez les arbres, mangez du castor!"; break;
-        case 7 : texte = "Tu as trouvé les bottes de Pégases !!! *Maintiens Shift ou verrouille les majuscules pour courir."; break;
+        case 7 : texte = "Tu as trouvé les bottes de Pégases !!! *Maintiens R pour courir."; break;
         case 8 : texte = "N : Plaine Est"; break;
         case 9 : texte = "O : Lac de Lanelle"; break;
         case 10 : texte = "S : Forêt interdite"; break;
@@ -197,8 +197,8 @@ case 2: // French
         case 128 : texte = "Tu ne dois pas te transformer ici !!!"; break;
         case 129 : texte = "Tu ne peux pas entrer dans ce village sous cette apparence !!!"; break;
         case 130 : texte = "Link, c'est Pit. Je te parle par télépathie. Tu ne dois en aucun cas te transformer dans un village !*Je te téléporte à l'extérieur."; break;
-        case 131 : texte = "Tu as trouvé une épée !!!**Appuie sur W pour attaquer ou maintiens W pour charger une super attaque."; break;
-        case 132 : texte = "Tu as trouvé la carte !!!**Appuie sur P pour voir le plan du donjon."; break;
+        case 131 : texte = "Tu as trouvé une épée !!!**Appuie sur B pour attaquer ou maintiens B pour charger une super attaque."; break;
+        case 132 : texte = "Tu as trouvé la carte !!!**Appuie sur START pour voir le plan du donjon."; break;
         case 133 : texte = "Tu as trouvé la boussole !!!**Les coffres et le boss du donjon sont désormais indiqués sur la carte."; break;
         case 134 : texte = "Tu as trouvé la clé du boss !!!**Sers-t'en pour accéder à son repaire."; break;
         case 135 : texte = "Tu as trouvé une petite clé.**Sers-t'en pour déverrouiller une porte."; break;
@@ -226,7 +226,7 @@ case 2: // French
             texte = "Tu as vaincu le monstre de cette mine ???*Félicitation!!!"; idsuiv=144; break;
         case 144 : texte = "Je suis le chef des ouvriers, tu dis que tu me cherchais ?"; idsuiv=145; break;
         case 145 : texte = "Prends ce sac rempli de bombes, ça devrait t'aider."; break;
-        case 146 : texte = "Tu as trouvé le Sac de Bombes !!!*Il est rempli en plus !!!*Appuie sur ENTREE pour les équiper, puis sur X pour en poser."; break;
+        case 146 : texte = "Tu as trouvé le Sac de Bombes !!!*Il est rempli en plus !!!*Appuie sur Y pour les équiper, puis sur X pour en poser."; break;
         case 147 : texte = "Tu as trouvé les Gants !!!**Tu peux désormais soulever les pierres légères en appuyant sur C."; break;
         case 148 : 
             if (gpJeu->getJoueur()->hasObjet(O_ARC)) {id=50; chercheText();break;}
@@ -296,7 +296,7 @@ case 2: // French
         case 195 : texte = "Tu as trouvé la Triforce !!!"; break;
         
         case 197 : texte = "Tutoriel : appuie sur ESPACE pour parler, lire ou ouvrir un coffre, et sur ENTREE pour passer les textes à l'écran."; break;
-        case 198 : texte = "Appuie sur C pour soulever un objet léger."; break;
+        case 198 : texte = "Appuie sur X pour soulever un objet léger."; break;
         case 199 : texte = "Souhaites-tu sauvegarder ta partie ?**                    ? OUI ?*                      non  "; break;
         case 200 : texte = "Souhaites-tu sauvegarder ta partie ?**                      oui  *                    ? NON ?"; break;
         case 201 : texte = "                   Niveau 1 :                                                                                 Temple de Firone"; break;
@@ -352,7 +352,7 @@ case 2: // French
         case 237 : texte = "J'augmente le nombre maximal de bombes que tu peux transporter, merci qui ???"; break;
         case 238 : texte = "J'augmente le nombre maximal de flèches que tu peux transporter, merci qui ???"; break;
         case 239 : texte = "J'ai assez de rubis, disparait!"; break;
-        case 240 : texte = "Tu as trouvé les Gants d'Or !!!**Tu peux désormais soulever les pierres lourdes en appuyant sur C."; break;
+        case 240 : texte = "Tu as trouvé les Gants d'Or !!!**Tu peux désormais soulever les pierres lourdes en appuyant sur X."; break;
         case 241 : texte = "Je ne laisserai passer que les créatures malfaisantes."; 
             if (gpJeu->getJoueur()->getOni()) idsuiv=243; break;
         case 242 : texte = "Je ne laisserai passer que les créatures bienfaisantes."; 
@@ -433,7 +433,7 @@ case 2: // French
         case 286 : texte = "Je vais donc répertorier chaque monstre dans une nouvelle encyclopédie!**Avec ton aide, cela va de soit."; idsuiv=287; break;
         case 287 : texte = "Je n'ai hélas plus de quarts de coeurs, mais les devises sont ma nouvelle devise.*Je te paierai un bon prix chaque nouveau monstre ajouté à l'encyclopédie."; idsuiv=288; break;
         case 288 : texte = "Passe me voir régulièrement pour obtenir tes gains. Si tu ne peux pas tout transporter, je garderais l'excédent pour ta prochaine venue."; idsuiv=289; break;
-        case 289 : texte = "Il suffit de battre de nouveaux monstres pour qu'ils soient ajoutés.*Tu peux consulter l'encyclopédie en appuyant sur M!"; break;
+        case 289 : texte = "Il suffit de battre de nouveaux monstres pour qu'ils soient ajoutés.*Tu peux consulter l'encyclopédie en appuyant sur L et B!"; break;
         case 290 : 
             texte = "Mmm... tu es un drôle de spécimen...";
             if (gpJeu->getJoueur()->getEnnemi(75) 
@@ -606,21 +606,21 @@ case 2: // French
         case 391 : texte = "Link! C'est Pit!!!*Qu'est ce que tu fabriques???*Fonce à la plaine ouest!!!"; break;
         case 392 : texte = "Link, c'est Zelda, félicitation!!!*Rauru est en sécurité, pour le moment...*Va à la tour du destin au sommet de la montagne et stoppe Ganon!"; break;
         case 393 : texte = "Tutoriel : lorsque la jauge de colère est pleine, tu te transformes en Oni-Link.*Ton allonge et ta force augmentent alors que ta défense diminue."; idsuiv=394; break;
-        case 394 : texte = "En Oni-Link, tu ne peux plus utiliser les objets équipables, mais tu peux te téléporter à l'entrée lorsque tu es dans un donjon en appuyant sur T."; idsuiv=395; break;
+        case 394 : texte = "En Oni-Link, tu ne peux plus utiliser les objets équipables, mais tu peux te téléporter à l'entrée lorsque tu es dans un donjon en appuyant sur L et R."; idsuiv=395; break;
         case 395 : texte = "A chaque ennemi vaincu par Oni-Link, ta jauge diminue. Une fois vide, Link reprend sa forme normale."; break;
         case 396 : texte = "Chef de projet, concepteur et programmeur :                                                                  Vincent Jouillat"; break;
         case 397 : texte = "Scénariste :                                                                                                      Lobaluz"; break;
         case 398 : texte = "Aide aux Graphismes :                                                                                           Harvestland"; break;
         case 399 : texte = "Aide aux Graphismes :                                                                                         Solène Jouillat"; break;
         case 400 : texte = "Illustrateur :                                                                                             Adrien Batis (Raiden)"; break;
-        case 401 : texte = "Tu as trouvé la carte de Termina !!!**Appuie sur P lorsque tu es à l'extérieur pour la visualiser."; break;
+        case 401 : texte = "Tu as trouvé la carte de Termina !!!**Appuie sur START lorsque tu es à l'extérieur pour la visualiser."; break;
         case 402 : texte = "La légende oublie qu'à la suite de ces évènements son héros fut frappé par une terrible malédiction..."; idsuiv=403; break;
         case 403 : texte = "Jour après jour, Link se transformait en un monstre au pouvoir destructeur incontrôlable surnommé Oni-Link..."; idsuiv=404; break;
         case 404 : texte = "Banni d'Hyrule, Link demanda conseil à la Princesse Zelda."; idsuiv=405; break;
         case 405 : texte = "Cette dernière lui indiqua son tout dernier espoir : un portail vers un monde secret..."; break;
         case 406 : texte = "Partie sauvegardée."; break;
         case 407 : texte = "Tu n'as pas besoin de boire cette potion maintenant."; break;
-        case 408 : texte = "AIDE : Appuie sur START pour consulter l'aide."; break;
+        case 408 : texte = "AIDE : Appuie L et Y pour consulter l'aide."; break;
         case 409 : texte = "Grrrr... Comment as-tu pu t'échapper du monde des morts et arriver jusqu'ici ???"; idsuiv=410; break;
         case 410 : texte = "Pourquoi t'entêtes-tu à venir m'affronter ? *Même si tu me terrasses je reviendrais toujours à la vie."; idsuiv=411; break;
         case 411 : texte = "Ta quête est vaine, abandonne tout espoir! **Let's rock, baby!"; break;
@@ -787,9 +787,9 @@ case 4: //Italian
         case 128 : texte = "Non devi trasformarti qui!!!"; break;
         case 129 : texte = "Non puoi andare in questo villaggio con quell'aspetto !!!"; break;
         case 130 : texte = "Link, sono Pit. Ti sto parlando telepaticamente. Non devi trasformarti per nessun motivo in un villaggio!*Ti teletrasporterò fuori."; break;
-        case 131 : texte = "Hai trovato una Spada!!!**Premi O per attaccare o mantienilo premuto per caricare un attacco roteante."; break;
+        case 131 : texte = "Hai trovato una Spada!!!**Premi B per attaccare o mantienilo premuto per caricare un attacco roteante."; break;
         case 132 : texte = "Hai trovato la Mappa!!!*Premi Start per vedere la mappa del Dungeon."; break;
-        case 133 : texte = "Hai trovato il Compasso!!!**Il Boss e i forzieri sono ora visibili sulla mappa."; break;
+        case 133 : texte = "Hai trovato la Bussola!!!**Il Boss e i forzieri sono ora visibili sulla mappa."; break;
         case 134 : texte = "Hai trovato la Chiave del Boss.**Usala per raggiungere la sua tana."; break;
         case 135 : texte = "Hai trovato una Chiave Piccola.**Usala per sbloccare una porta."; break;
         case 136 : texte = "Hai trovato un Cuore Nuovo!!!**La tua vita massima aumenta di uno!!!"; break;
@@ -816,8 +816,8 @@ case 4: //Italian
             texte = "Hai sconfitto il mostro nella miniera???*Congratulazioni!!!"; idsuiv=144; break;
         case 144 : texte = "Sono il capo dei lavoratori, mi stavi cercando?"; idsuiv=145; break;
         case 145 : texte = "Prendi questo sacco pieno di bombe, potrebbe esserti d'aiuto."; break;
-        case 146 : texte = "Hai trovato il Sacco di Bombe!!!*Ed è pieno!!!*Premi ENTER per accenderle, e X per posarle."; break;
-        case 147 : texte = "Hai trovato i Guanti!!!**Ora puoi sollevare pietre leggere con Triangolo."; break;
+        case 146 : texte = "Hai trovato il Sacco di Bombe!!!*Ed è pieno!!!*Premi Y per accenderle, e X per posarle."; break;
+        case 147 : texte = "Hai trovato i Guanti!!!**Ora puoi sollevare pietre leggere con X."; break;
         case 148 : 
             if (gpJeu->getJoueur()->hasObjet(O_ARC)) {id=50; chercheText();break;}
             texte = "Sono il braccio destro del sindaco, mi ha inviato a salvare sua figlia...*Ma ci ho rinunciato, non c'è niente da fare contro questi fantasmi..."; idsuiv=149; break;
@@ -885,8 +885,8 @@ case 4: //Italian
         case 194 : texte = "Hai trovato l'Arco della Grande Fata!!!**Ora puoi scoccare frecce dall'altissimo potenziale!!!"; break;
         case 195 : texte = "Hai trovato il Triforce !!!"; break;
         
-        case 197 : texte = "Guida : Premi X per parlare, leggere, aprire forzieri o per proseguire nei dialoghi su schermo."; break;
-        case 198 : texte = "Premi Triangolo per sollevare oggetti leggeri."; break;
+        case 197 : texte = "Guida : Premi A per parlare, leggere, aprire forzieri o per proseguire nei dialoghi su schermo."; break;
+        case 198 : texte = "Premi X per sollevare oggetti leggeri."; break;
         case 199 : texte = "Vuoi salvare il gioco?**                    ? SI ?*                      no  "; break;
         case 200 : texte = "Vuoi salvare il gioco?**                      si  *                    ? NO ?"; break;
         case 201 : texte = "                    Livello 1 :                                                                                   Tempio di Faron"; break;
@@ -942,7 +942,7 @@ case 4: //Italian
         case 237 : texte = "Alzerò il numero massimo di bombe che puoi trasportare, grazie a chi???"; break;
         case 238 : texte = "Alzerò il numero massimo di frecce che puoi trasportare, grazie a chi???"; break;
         case 239 : texte = "Ho abbastanza rupie, sparisci!"; break;
-        case 240 : texte = "Hai trovato il Guanto d'Oro!!!**Ora puoi sollevare pietre pesanti premendo Triangolo."; break;
+        case 240 : texte = "Hai trovato il Guanto d'Oro!!!**Ora puoi sollevare pietre pesanti premendo X."; break;
         case 241 : texte = "Lascio passare solo creature malefiche."; 
             if (gpJeu->getJoueur()->getOni()) idsuiv=243; break;
         case 242 : texte = "Lascio passare solo creature buone."; 
@@ -1023,7 +1023,7 @@ case 4: //Italian
         case 286 : texte = "Raccoglierò informazioni sui mostri su di una nuova Enciclopedia!**Con il tuo aiuto, ovviamente."; idsuiv=287; break;
         case 287 : texte = "Sfortunatamente non ho piu pezzi di cuore, però ora pago in monete. *Ti pagherò profumatamente per ogni mostro aggiunto all'Enciclopedia."; idsuiv=288; break;
         case 288 : texte = "Torna qui regolarmente per ricevere le tue ricompense. Se non hai spazio a sufficienza, terrò il resto per la tua prossima visita."; idsuiv=289; break;
-        case 289 : texte = "Devi solo sconfiggere un mostro nuovo per aggiungerlo all'Enciclopedia.*Puoi consultarla premendo L e O!"; break;
+        case 289 : texte = "Devi solo sconfiggere un mostro nuovo per aggiungerlo all'Enciclopedia.*Puoi consultarla premendo L e B!"; break;
         case 290 : 
             texte = "Mmm... sei un esemplare curioso...";
             if (gpJeu->getJoueur()->getEnnemi(75) 
@@ -1209,7 +1209,7 @@ case 4: //Italian
         case 405 : texte = "Lei le indico la sua ultima speranza : un portale per un mondo segreto..."; break;
         case 406 : texte = "Partita salvata."; break;
         case 407 : texte = "Non c'è bisogno di bere questa pozione ora."; break;
-        case 408 : texte = "AIUTO : Premi L e Quadrato per consultare gli Aiuti."; break;
+        case 408 : texte = "AIUTO : Premi L e Y per consultare gli Aiuti."; break;
         case 409 : texte = "Grrrr... Come hai fatto a scappare dal mondo dei morti e a raggiungermi???"; idsuiv=410; break;
         case 410 : texte = "Perchè insisti nell'affrontarmi? *Anche se mi batterai, tornerò in vita."; idsuiv=411; break;
         case 411 : texte = "La tua missione è inutile, abbadona ogni speranza! **Divertiamoci!"; break;
@@ -1227,7 +1227,7 @@ case 5: // Spanish
             break;
         case 5 : texte = "Cueva del portal sellado.**Entrada prohibida."; break;
         case 6 : texte = "Templo de Farone**Salve los árboles, coma castor!!!"; break;
-        case 7 : texte = "Has encontrado las botas Pegasus !!! *Manten Shift o pulsa Capslock para correr."; break;
+        case 7 : texte = "Has encontrado las botas Pegasus !!! *Manten Shift o pulsa R para correr."; break;
         case 8 : texte = "N : Finca Este"; break;
         case 9 : texte = "O : Lago de Lanayru"; break;
         case 10 : texte = "S : Bosque Prohibido"; break;
@@ -1376,8 +1376,8 @@ case 5: // Spanish
         case 128 : texte = "No puedes transformarte aquí !!!"; break;
         case 129 : texte = "No puedes entrar en un pueblo con esta apariencia !!!"; break;
         case 130 : texte = "Link, soy Pit. Te hablo por telepatía. No debes en ningún caso transformarte en un pueblo !*Te teletransporto fuera."; break;
-        case 131 : texte = "Has encontrado una espada !!!**Pulsa Z (o W) para atacar o manten Z para cargar un ataque genial."; break;
-        case 132 : texte = "Has encontrado el mapa !!!**Pulsa P para ver el mapa del calabozo."; break;
+        case 131 : texte = "Has encontrado una espada !!!**Pulsa B para atacar o manten B para cargar un ataque genial."; break;
+        case 132 : texte = "Has encontrado el mapa !!!**Pulsa START para ver el mapa del calabozo."; break;
         case 133 : texte = "Has encontrado la brújula !!!**Las arcas y el jefe del calabozo se ven ahora sobre el mapa."; break;
         case 134 : texte = "Has encontrado la llave del jefe !!!**Utilízala para llevar a su antro."; break;
         case 135 : texte = "Has encontrado una llave pequeña.**Utilízala para abrir una puerta."; break;
@@ -1405,8 +1405,8 @@ case 5: // Spanish
             texte = "Venciste el monstruo de la mina ??? *Felicitaciones!!!"; idsuiv=144; break;
         case 144 : texte = "Soy el jefe de los obreros, dices que estabas buscándome?"; idsuiv=145; break;
         case 145 : texte = "Toma esta bolsa llena de bombas, debería ayudarte."; break;
-        case 146 : texte = "Has encontrado la Bolsa de Bombas !!!*Y está llena !!!*Pulsa ENTER para equiparlas, y después X para poner una."; break;
-        case 147 : texte = "Has encontrado los Guantes !!!**Ahora puedes levantar las piedras ligeras pulsando C."; break;
+        case 146 : texte = "Has encontrado la Bolsa de Bombas !!!*Y está llena !!!*Pulsa Y equiparlas, y después X para poner una."; break;
+        case 147 : texte = "Has encontrado los Guantes !!!**Ahora puedes levantar las piedras ligeras pulsando X."; break;
         case 148 : 
             if (gpJeu->getJoueur()->hasObjet(O_ARC)) {id=50; chercheText();break;}
             texte = "Soy el brazo derecho del alcalde, me mandó salvar a su hija...*Pero no pude hacer nada, estos fantasmas son invencibles..."; idsuiv=149; break;
@@ -1474,8 +1474,8 @@ case 5: // Spanish
         case 194 : texte = "Has encontrado el gran Arco de las Hadas !!! **Ahora tiras flechas de una potencia extraordinaria !!!"; break;
         case 195 : texte = "Has encontrado la Trifuerza !!!"; break;
         
-        case 197 : texte = "Tutorial : pulsa ESPACIO para hablar, leer o abrir una arca, y ENTER para pasar los textos en la pantalla."; break;
-        case 198 : texte = "Pulsa C para levantar un objeto ligero."; break;
+        case 197 : texte = "Tutorial : pulsa A para hablar, leer o abrir una arca, y A para pasar los textos en la pantalla."; break;
+        case 198 : texte = "Pulsa X para levantar un objeto ligero."; break;
         case 199 : texte = "Quieres gravar tu juego ?**                     ? SI ?*                       no  "; break;
         case 200 : texte = "Quieres gravar tu juego ?**                       si  *                     ? NO ?"; break;
         case 201 : texte = "                    Nivel 1 :                                                                                 Templo de Farone"; break;
@@ -1531,7 +1531,7 @@ case 5: // Spanish
         case 237 : texte = "Aumento la cantidad máxima de bombas que puedes transportar, gracias a quién ???"; break;
         case 238 : texte = "Aumento la cantidad máxima de flechas que puedes transportar, gracias a quién ???"; break;
         case 239 : texte = "Tengo bastante rupias, desaparece !"; break;
-        case 240 : texte = "Has encontrado los Guantes de Oro !!!**Ahora puedes levantar las piedras pesadas pulsando C."; break;
+        case 240 : texte = "Has encontrado los Guantes de Oro !!!**Ahora puedes levantar las piedras pesadas pulsando X."; break;
         case 241 : texte = "Solo dejaré pasar a las criaturas maléficas."; 
             if (gpJeu->getJoueur()->getOni()) idsuiv=243; break;
         case 242 : texte = "Solo dejaré pasar a las criaturas beneficiosas."; 
@@ -1612,7 +1612,7 @@ case 5: // Spanish
         case 286 : texte = "Entonces voy a catalogar cada monstruo en una nueva enciclopedia!**Con tu ayuda, por supuesto."; idsuiv=287; break;
         case 287 : texte = "No tengo más cuartos de corazón, ahora el dinero es mi moneda más cotizada.*Te pagaré un buen precio por cada nuevo monstruo añadido en la enciclopedia."; idsuiv=288; break;
         case 288 : texte = "Pasa a verme cuando quieras para recibir tus beneficios. Si no puedes transportar todo, conservaré el excedente para ti."; idsuiv=289; break;
-        case 289 : texte = "Basta con matar a los monstruos para que sean añadidos.*Puedes consultar la enciclopedia pulsando M!"; break;
+        case 289 : texte = "Basta con matar a los monstruos para que sean añadidos.*Puedes consultar la enciclopedia pulsando L y B!"; break;
         case 290 : 
             texte = "Vaya... que raro eres...";
             if (gpJeu->getJoueur()->getEnnemi(75) 
@@ -1785,21 +1785,21 @@ case 5: // Spanish
         case 391 : texte = "Link! Soy Pit!!!*Que estas haciendo ???*Date prisa de ir a la finca oeste !!!"; break;
         case 392 : texte = "Link, soy Zelda, felicitaciones!!!*Rauru está en seguridad, por un rato...*Va a la Torre del Destino  en la cumbre de la montaña y para a Ganon!"; break;
         case 393 : texte = "Tutorial : cuando el indicador de nivel de ira está lleno, te transformas en Oni-Link.*Tu alcance y tu fuerza aumentan mientras que tu defensa disminuye."; idsuiv=394; break;
-        case 394 : texte = "En Oni-Link, no puedes utilizar los objetos equipables, pero puedes teletransportarte en la entrada cuando estas en un calabozo pulsando T."; idsuiv=395; break;
+        case 394 : texte = "En Oni-Link, no puedes utilizar los objetos equipables, pero puedes teletransportarte en la entrada cuando estas en un calabozo pulsando L y R."; idsuiv=395; break;
         case 395 : texte = "Por cada enemigo vencido por Oni-Link, tu indicador de nivel disminuye. Cuando está vacío, Link recupera su forma inicial."; break;
         case 396 : texte = "Jefe de proyecto, diseñador y programador :                                                                  Vincent Jouillat"; break;
         case 397 : texte = "Guionista y traductora :                                                                                         Lobaluz"; break;
         case 398 : texte = "Ayuda con los Grafismos :                                                                                      Harvestland"; break;
         case 399 : texte = "Ayuda con los Grafismos :                                                                                    Solène Jouillat"; break;
         case 400 : texte = "Ilustrador :                                                                                                      Raiden"; break;
-        case 401 : texte = "Has encontrado el mapa de Termina !!!**Pulsa P cuando estas fuera para mirarlo."; break;
+        case 401 : texte = "Has encontrado el mapa de Termina !!!**Pulsa START cuando estas fuera para mirarlo."; break;
         case 402 : texte = "La leyenda olvida que después de estos acontecimientos su héroe fue presa de una terrible maldición..."; idsuiv=403; break;
         case 403 : texte = "Día a día, Link se transformaba en un monstruo con un poder destructor incontrolable nombrado Oni-Link..."; idsuiv=404; break;
         case 404 : texte = "Exiliado de Hyrule, Link pidió consejo a la Princesa Zelda."; idsuiv=405; break;
         case 405 : texte = "Ella le indicó su ultima esperanza : un portal hasta un mondo secreto..."; break;
         case 406 : texte = "Juego gravado."; break;
         case 407 : texte = "No necesitas beber esta pócima ahora."; break;
-        case 408 : texte = "AYUDA : Pulsa START para consultar la ayuda."; break;
+        case 408 : texte = "AYUDA : Pulsa L y Y para consultar la ayuda."; break;
         case 409 : texte = "Grrrr... Como has podido escaparte del mundo de los muertos y llegar aquí ???"; idsuiv=410; break;
         case 410 : texte = "Porque te empeñas en venir a enfrentarme ? *Aunque me venzas siempre resucitaré."; idsuiv=411; break;
         case 411 : texte = "Tu búsqueda es vana, abandona toda esperanza! **Let's rock, baby!"; break;
@@ -1817,7 +1817,7 @@ default:
             break;
         case 5 : texte = "Sealed portal cave.**No Entry."; break;
         case 6 : texte = "Faron Temple**Save the trees, eat beaver!!!"; break;
-        case 7 : texte = "You find Pegasus Boots!!! *Shift hold or Caps lock to run."; break;
+        case 7 : texte = "You find Pegasus Boots!!! *Hold R to run."; break;
         case 8 : texte = "N : East Field"; break;
         case 9 : texte = "W : Lanayru Lake"; break;
         case 10 : texte = "S : Forbidden Forest"; break;
@@ -1966,8 +1966,8 @@ default:
         case 128 : texte = "You must not transform yourself here!!!"; break;
         case 129 : texte = "You cannot go in this village with this appearance !!!"; break;
         case 130 : texte = "Link, it's Pit. I am talking with you by telepathy. You must under no circumstances transform yourself in a village!*I will teleport you outside."; break;
-        case 131 : texte = "You find a sword!!!**Press Z (or W) to attack or hold Z (or W) to charg a spin attack."; break;
-        case 132 : texte = "You find the Map!!!*Press P to see the map of the Dungeon."; break;
+        case 131 : texte = "You find a sword!!!**Press B to attack or hold B to charg a spin attack."; break;
+        case 132 : texte = "You find the Map!!!*Press START to see the map of the Dungeon."; break;
         case 133 : texte = "You find the Compass!!!**The Boss and chests are now indicated on the map."; break;
         case 134 : texte = "You find the Boss Key.**Use it to reach his haunt."; break;
         case 135 : texte = "You find a small key.**Use it to unlock a door."; break;
@@ -1995,8 +1995,8 @@ default:
             texte = "You defeated the monster of the mine???*Congratulations!!!"; idsuiv=144; break;
         case 144 : texte = "I am the chief of the workers, you say you were looking for me?"; idsuiv=145; break;
         case 145 : texte = "Take this bag full of bomb, it may help you."; break;
-        case 146 : texte = "You find the Bomb Bag!!!*And it's full!!!*Press ENTER to set them up, and X to put one down."; break;
-        case 147 : texte = "You find the Gloves!!!**Now you can lift light stones by pressing C."; break;
+        case 146 : texte = "You find the Bomb Bag!!!*And it's full!!!*Press Y to set them up, and X to put one down."; break;
+        case 147 : texte = "You find the Gloves!!!**Now you can lift light stones by pressing X."; break;
         case 148 : 
             if (gpJeu->getJoueur()->hasObjet(O_ARC)) {id=50; chercheText();break;}
             texte = "I am the right hand man of the mayor, he sent me to save his daughter...*But I've been had, there is nothing to do against these ghosts..."; idsuiv=149; break;
@@ -2064,8 +2064,8 @@ default:
         case 194 : texte = "You find the Great Fairy Bow!!!**Now you can shoot arrows with an incredible power!!!"; break;
         case 195 : texte = "You find the Triforce !!!"; break;
         
-        case 197 : texte = "Tutorial : Press SPACE to talk, read or open a chest, and ENTER to pass the texts on the screen on."; break;
-        case 198 : texte = "Press C to lift a light object."; break;
+        case 197 : texte = "Tutorial : Press A to talk, read, open a chest, or to pass the texts on the screen on."; break;
+        case 198 : texte = "Press X to lift a light object."; break;
         case 199 : texte = "Do you want to save your game?**                    ? YES ?*                      no  "; break;
         case 200 : texte = "Do you want to save your game?**                      yes  *                    ? NO ?"; break;
         case 201 : texte = "                    Level 1 :                                                                                   Faron Temple"; break;
@@ -2121,7 +2121,7 @@ default:
         case 237 : texte = "I raise the maximum amount of bombs you can carry on, thanks to who???"; break;
         case 238 : texte = "I raise the maximum amount of arrows you can carry on, thanks to who???"; break;
         case 239 : texte = "I have enough rupees, disappear!"; break;
-        case 240 : texte = "You find the Golden Gloves!!!**Now you can lift heavy stones pressing C."; break;
+        case 240 : texte = "You find the Golden Gloves!!!**Now you can lift heavy stones pressing X."; break;
         case 241 : texte = "I let go through only maleficious creatures."; 
             if (gpJeu->getJoueur()->getOni()) idsuiv=243; break;
         case 242 : texte = "I let go through only beneficent creatures."; 
@@ -2202,7 +2202,7 @@ default:
         case 286 : texte = "I will list all monsters in a new encyclopedia!**With your help, of course."; idsuiv=287; break;
         case 287 : texte = "Unfortunately I don't have pieces of heart anymore, but currency is my new currency. *I will pay you a good price for each new monster added in the encyclopedia."; idsuiv=288; break;
         case 288 : texte = "Come here regularly to get your winnings. If you can't carry all, I will keep the surplus for your next visit."; idsuiv=289; break;
-        case 289 : texte = "You just have to beat a new enemy to add him in the encyclopedia.*You can see it by pressing M!"; break;
+        case 289 : texte = "You just have to beat a new enemy to add him in the encyclopedia.*You can see it by pressing L + B!"; break;
         case 290 : 
             texte = "Mmm... you are a curious specimen...";
             if (gpJeu->getJoueur()->getEnnemi(75) 
@@ -2374,21 +2374,21 @@ default:
         case 391 : texte = "Link! It's Pit!!!*What are you doing???*Get a move on to the West Field!!!"; break;
         case 392 : texte = "Link, it's Zelda, congratulations!!!*Rauru is safe, for the moment...*Go to the Destiny Tower at the peak of the mountain and stop Ganon!"; break;
         case 393 : texte = "Tutorial : when the gauge of anger is full, you are transformed into Oni-Link.*Your weapon is extended and your strenght increases while your defense reduces."; idsuiv=394; break;
-        case 394 : texte = "As Oni-Link, you cannot use objects, but you can teleport yourself to the entry when you are in a dungeon by pressing T."; idsuiv=395; break;
+        case 394 : texte = "As Oni-Link, you cannot use objects, but you can teleport yourself to the entry when you are in a dungeon by pressing L + R."; idsuiv=395; break;
         case 395 : texte = "Each time Oni-Link defeats an enemy, your gauge decreases. When it's empty, Link regain his normal form."; break;
         case 396 : texte = "Team leader, creator and programmer :                                                                         Vincent Jouillat"; break;
         case 397 : texte = "Scriptwriter and translator:                                                                                      Lobaluz"; break;
         case 398 : texte = "Help to the Graphics :                                                                                          Harvestland"; break;
         case 399 : texte = "Help to the Graphics :                                                                                        Solène Jouillat"; break;
         case 400 : texte = "Illustrator :                                                                                                      Raiden"; break;
-        case 401 : texte = "You find the Termina map!!!**Press P when you are outside to see it."; break;
+        case 401 : texte = "You find the Termina map!!!**Press START when you are outside to see it."; break;
         case 402 : texte = "The legend forgets that after these events, the hero was brought down by a terrible curse..."; idsuiv=403; break;
         case 403 : texte = "Day by day, Link was transforming into an incontrollable and destructive powered monster named Oni-Link..."; idsuiv=404; break;
         case 404 : texte = "Banished from Hyrule, Link asked for advice from Princess Zelda."; idsuiv=405; break;
         case 405 : texte = "She indicated to him his last hope : a portal to a secret world..."; break;
         case 406 : texte = "Game saved."; break;
         case 407 : texte = "You don't need to drink this potion now."; break;
-        case 408 : texte = "HELP : Press START to see the help."; break;
+        case 408 : texte = "HELP : Press L + Y to see the help."; break;
         case 409 : texte = "Grrrr... But how could you escape from the world of the deads and arrive here???"; idsuiv=410; break;
         case 410 : texte = "Why do you persist to challenge me? *Even if you strike me down I will always return to life."; idsuiv=411; break;
         case 411 : texte = "Your quest is vain, abandon all hope! **Let's rock, baby!"; break;
