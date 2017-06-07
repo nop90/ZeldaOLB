@@ -167,7 +167,8 @@ break;
     for (int i = 0; i < 3; i++) {
         Joueur* gpJoueur = new Joueur(gpJeu,i+1);
         if (gpJoueur->getLoader()) {
-            //vie
+ 
+           //vie
             if(gpJoueur->getVie()>gpJoueur->getVieMax()) gpJoueur->setVie(gpJoueur->getVieMax());
             for(int j=0;j<gpJoueur->getVieMax()/2;j++) {
                 src.h = 7; src.w = 7; src.y=9;
@@ -204,7 +205,8 @@ break;
             if (gpJoueur->getEnnemi(50)) SDL_BlitSurface(objets, &src, image, &dst);
             
             gpJeu->getKeyboard()->setSave(i,1);
-        } else gpJeu->getKeyboard()->setSave(i,0);
+        } else 
+		gpJeu->getKeyboard()->setSave(i,0);
 		delete gpJoueur;
 	}
     
@@ -1185,7 +1187,7 @@ case 2: // French
     gpJeu->affiche(gpScreen, "RETOUR", 63, 200);
 break;
 
-/*
+
 case 4: // Italian
     gpJeu->affiche(gpScreen, "OPZIONI", 40, 16);
     gpJeu->affiche(gpScreen, "MUSICA", 60, 72);
@@ -1194,7 +1196,7 @@ case 4: // Italian
     gpJeu->affiche(gpScreen, "Italiano", 170, 158);
     gpJeu->affiche(gpScreen, "INDIETRO", 63-6, 200);
 break;
-*/
+
 case 5: // Spanish
    gpJeu->affiche(gpScreen, "OPCIONES", 40-1, 16);
     gpJeu->affiche(gpScreen, "MUSICA", 60, 72);
@@ -1215,7 +1217,7 @@ break;
 }
 
 	int languageID = getLanguage();
-	if (languageID<1 || languageID>5 || languageID==3) 
+	if (languageID<1 || languageID>5) 
 		languageID = 1;
 
     src.h = 21; src.w = 16;src.x = 0;src.y=0;

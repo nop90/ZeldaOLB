@@ -226,7 +226,7 @@ case 2: // French
             texte = "Tu as vaincu le monstre de cette mine ???*Félicitation!!!"; idsuiv=144; break;
         case 144 : texte = "Je suis le chef des ouvriers, tu dis que tu me cherchais ?"; idsuiv=145; break;
         case 145 : texte = "Prends ce sac rempli de bombes, ça devrait t'aider."; break;
-        case 146 : texte = "Tu as trouvé le Sac de Bombes !!!*Il est rempli en plus !!!*Appuie sur Y pour les équiper, puis sur X pour en poser."; break;
+        case 146 : texte = "Tu as trouvé le Sac de Bombes !!!*Il est rempli en plus !!!*Appuie sur Y pour en poser."; break;
         case 147 : texte = "Tu as trouvé les Gants !!!**Tu peux désormais soulever les pierres légères en appuyant sur C."; break;
         case 148 : 
             if (gpJeu->getJoueur()->hasObjet(O_ARC)) {id=50; chercheText();break;}
@@ -666,7 +666,7 @@ case 4: //Italian
         case 23 : texte = "- Melodia del Volo*- ELEGIA DEL VUOTO*- Canzone dello Spirito*- Non suonare"; break;
         case 24 : texte = "- Melodia del Volo*- Elegia del Vuoto*- CANZONE DELLO SPIRITO*- Non suonare"; break;
         case 25 : texte = "- Melodia del Volo*- Elegia del Vuoto*- Canzone dello Spirito*- NON SUONARE"; break;
-        case 26 : texte = "- ELEGIA DEL VUOTO*- Don't play";
+        case 26 : texte = "- ELEGIA DEL VUOTO*- non suonare";
             if (gpJeu->getJoueur()->hasMelodie(2)) {id=33; chercheText();break;}
             break;
         case 27 : texte = "- Elegia del Vuoto*- NON SUONARE"; break;
@@ -679,9 +679,9 @@ case 4: //Italian
         case 34 : texte = "- Elegia del Vuoto*- CANZONE DELLO SPIRITO*- Non suonare"; break;
         case 35 : texte = "- Elegia del Vuoto*- Canzone dello Spirito*- NON SUONARE"; break;
         case 36 : texte = "N : Villaggio Ruto*S : Campo Est"; break;
-        case 37 : texte = "S : Villagio Ruto*E : Deserto"; break;
+        case 37 : texte = "S : Villaggio Ruto*E : Deserto"; break;
         case 38 : texte = "Entrata delle Miniera"; break;
-        case 39 : texte = "W : Tempio Ordona*E : Villaggio Ruto"; break;
+        case 39 : texte = "O : Tempio di Ordona*E : Villaggio Ruto"; break;
         case 40 : texte = "Spiacente, era la mia unica bottiglia."; break;
         case 41 : texte = "Vendo una bottiglia per 100 rupie, sei interessato?*              SI' ?            no  "; 
             if (gpJeu->getJoueur()->hasBouteille(0)) {id=40; chercheText();break;}
@@ -709,35 +709,35 @@ case 4: //Italian
         case 54 : texte = "Benvenuto al Villaggio Ruto.**E detto tra noi, non fidarti di nessuno qui..."; break;
         case 55 : texte = "Anche se questo villaggio sembra in salute ad una prima occhiata, è il piu povero di Termina... E non possiamo contare sul sindaco per un cambiamento..."; break;
         case 56 : texte = "I turisti che arrivano qui o si sono persi, o sono completamente matti.**Per quanto mi riguarda, io tengo sempre una mappa con me."; break;
-        case 57 : texte = "S : Al Campo Est*W : Al Tempio Ordona*E : Villaggio Ruto"; break;
+        case 57 : texte = "S : Al Campo Est*O : Al Tempio di Ordona*E : Villaggio Ruto"; break;
         case 58 : texte = "S : Campo Est"; break;
         case 59 : texte = "Tempio Ordona"; break;
         case 60 : texte = "E : Terra Dimenticata"; break;
-        case 61 : texte = "S : Villaggio Ruto*W : Morte Certa"; break;
+        case 61 : texte = "S : Villaggio Ruto*O : Morte Certa"; break;
         case 62 : texte = "Oasi Incantata"; break;
         case 63 : texte = "Grotta Fatata"; break;
         case 64 : texte = "Tempio Din**Il potere delle Fate ricompenserà il coraggio!"; break;
         case 65 : texte = "                     ???"; break;
         case 66 : texte = "Tempio Lanayru"; break;
-        case 67 : texte = "W : Palude della STrega"; break;
+        case 67 : texte = "O : Palude della STrega"; break;
         case 68 : texte = "E : Foresta Proibita"; break;
-        case 69 : texte = "N : East Field*W : To Rauru City"; break;
-        case 70 : texte = "N : Rauru City"; break;
-        case 71 : texte = "O : West Field"; break;
+        case 69 : texte = "N : Campo Est*O : A Città di Rauru"; break;
+        case 70 : texte = "N : Città di Rauru"; break;
+        case 71 : texte = "O : Campo Ovest"; break;
         case 72 : texte = "N : Terra Dimenticata*S : Città di Rauru"; break;
-        case 73 : texte = "N : Città di Rauru*S : Lago Lanayru*W : Campo Ovest*E : Campo Est"; break;
+        case 73 : texte = "N : Città di Rauru*S : Lago Lanayru*O : Campo Ovest*E : Campo Est"; break;
         case 74 : texte = "E : Campo Est"; break;
         case 75 :  texte = "Spiacente, non ho piu nulla in magazzino."; break;
-        case 76 : texte = "Vendo una armatura migliore per 250 rupie, sei interessato?*              SI' ?            no  "; 
+        case 76 : texte = "Vendo un'armatura migliore per 250 rupie, sei interessato?*              SI' ?            no  "; 
             if (gpJeu->getJoueur()->getBouclier()>1) {id=75; chercheText();break;}
             if (gpJeu->getJoueur()->getRubis() + gpJeu->getJoueur()->getBoostRubis()<250) idsuiv=44;
             else idsuiv=45;
             break;
-        case 77 : texte = "Vendo una armatura migliore per 250 rupie, sei interessato?*              si               NO ?"; idsuiv=43; break;
+        case 77 : texte = "Vendo un'armatura migliore per 250 rupie, sei interessato?*              si               NO ?"; idsuiv=43; break;
         case 78 : texte = "Hai trovato uno scudo nuovo!!!*La tua difesa aumenta di un punto, la tua resistenza contro gli attacchi nemici aumenta !!!"; break;
-        case 79 : texte = "But why do I have to care for these hens again???"; break;
+        case 79 : texte = "Ma perchè devo occuparmi di nuovo di queste galline???"; break;
         case 80 : texte = "Mi piace spazzare!"; break;
-        case 81 : texte = "Rauru è la piu bella città del posto, ogni giorno arrivano fiotte di visitatori."; break;
+        case 81 : texte = "Rauru è la piu bella città del posto, ogni giorno arrivano frotte di visitatori."; break;
         case 82 : texte = "Si dice che uno strumento magico sia nascosto in Termina. *Mi domando se lo vedrò un giorno..."; break;
         case 83 : texte = "Hai trovato lo strumento magico???**Speravo fosse un sax..."; break;
         case 84 : texte = "I miei genitori si sono persi."; break;
@@ -816,12 +816,12 @@ case 4: //Italian
             texte = "Hai sconfitto il mostro nella miniera???*Congratulazioni!!!"; idsuiv=144; break;
         case 144 : texte = "Sono il capo dei lavoratori, mi stavi cercando?"; idsuiv=145; break;
         case 145 : texte = "Prendi questo sacco pieno di bombe, potrebbe esserti d'aiuto."; break;
-        case 146 : texte = "Hai trovato il Sacco di Bombe!!!*Ed è pieno!!!*Premi Y per accenderle, e X per posarle."; break;
+        case 146 : texte = "Hai trovato il Sacco di Bombe!!!*Ed è pieno!!!*Premi Y per posarle."; break;
         case 147 : texte = "Hai trovato i Guanti!!!**Ora puoi sollevare pietre leggere con X."; break;
         case 148 : 
             if (gpJeu->getJoueur()->hasObjet(O_ARC)) {id=50; chercheText();break;}
             texte = "Sono il braccio destro del sindaco, mi ha inviato a salvare sua figlia...*Ma ci ho rinunciato, non c'è niente da fare contro questi fantasmi..."; idsuiv=149; break;
-        case 149 : texte = "Non rimanre qui, non puoi fare nulla con le armi che possiedi..."; idsuiv=150; break;
+        case 149 : texte = "Non rimanere qui, non puoi fare nulla con le armi che possiedi..."; idsuiv=150; break;
         case 150 : texte = "Per continuare la tua missione, segui la strada ad ovest della città. Quest'arco ti permetterà di raggiungere la sfera e aprire la strada..."; break;
         case 151 : texte = "Hai trovato l'Arco!!!*Ora puoi attaccare a distanza e raggiungere bersagli lontani!!!"; break;
         case 152 : 
@@ -860,10 +860,10 @@ case 4: //Italian
             || (gpJeu->getZone() == 24 && gpJeu->getJoueur()->getCoffre(9,24))
             || (gpJeu->getZone() == 25 && gpJeu->getJoueur()->getCoffre(10,21))) {
                 id=50; chercheText();break;}
-            texte = "Ti staco aspettando, Link.*Rilascerò il potere della Dea sulla tua spada per restaurare la Spada Maestra."; break;
+            texte = "Ti stavo aspettando, Link.*Rilascerò il potere della Dea sulla tua spada per restaurare la Spada Maestra."; break;
         case 177 : 
             if (gpJeu->getJoueur()->getEpee()==5) {id=178; chercheText();break;}
-            texte = "Il potere della Spada Maestra cresce ! **Vai velocemente al prossimo tempio!"; break;
+            texte = "Il potere della Spada Maestra cresce! **Vai velocemente al prossimo tempio!"; break;
         case 178 : texte = "La Spada Maestra raggiunge il suo potere massimo!!!  *Anche Oni-Link non può resistere a questa spada!!!"; break;
         case 179 : texte = "Hai trovato l'Asta di Ghiaccio!!!**Ora puoi congelare qualsiasi cosa!!!"; break;
         case 180 : texte = "Hai trovato uno scudo nuovo!!!*La tua difesa aumenta, la tua resistenza agli attacchi nemici aumenta!!!"; break;
@@ -875,7 +875,7 @@ case 4: //Italian
         case 186 : texte = "Comunque, magari ti starai domandando da dove viene Oni-Link? E' semplice, l'ultima volta ho fatto in modo da non essere piu disturbato, perciò ho usato"; idsuiv=187; break;
         case 187 : texte = "il Triforce per renderti un mostro della mia legione. Ma il tuo cuore era troppo puro, perciò la trasformazione non si è completata..."; idsuiv=188; break;
         case 188 : texte = "Ma sto divagando, ho un mucchio di piani...*Sarebbe un piacere eliminarti, ma non credo sia necessario..."; idsuiv=189; break;
-        case 189 : texte = "Per tua informazione, solo le creature dell'oscurità possono uscire da qi.*Quindi, addio! Gwahahahahaha !!!"; break;
+        case 189 : texte = "Per tua informazione, solo le creature dell'oscurità possono uscire da qui.*Quindi, addio! Gwahahahahaha !!!"; break;
         case 190 : 
             if (!gpJeu->getJoueur()->getOni()) {id=184; chercheText();break;}
             texte = "Onily? Allora, dov'è il mio caffè???*Cosa??? Sei tu, Link???"; idsuiv=184; break;
@@ -889,29 +889,29 @@ case 4: //Italian
         case 198 : texte = "Premi X per sollevare oggetti leggeri."; break;
         case 199 : texte = "Vuoi salvare il gioco?**                    ? SI ?*                      no  "; break;
         case 200 : texte = "Vuoi salvare il gioco?**                      si  *                    ? NO ?"; break;
-        case 201 : texte = "                    Livello 1 :                                                                                   Tempio di Faron"; break;
-        case 202 : texte = "                    Livello 2 :                                                                                     Miniera di Ruto"; break;
-        case 203 : texte = "                    Livello 3 :                                                                                   Tempio di Ordona"; break;
+        case 201 : texte = "                   Livello 1 :                                                                                Tempio di Faron"; break;
+        case 202 : texte = "                   Livello 2 :                                                                                Miniera di Ruto"; break;
+        case 203 : texte = "                   Livello 3 :                                                                                Tempio di Ordona"; break;
         case 204 : 
             if (gpJeu->getJoueur()->getEpee()>=2) 
-                   texte = "                    Livello 9 :                                                                                  Casa Stregata";
-            else   texte = "                    Livello 4 :                                                                                  Casa Stregata"; break;
-        case 205 : texte = "                    Livello 5 :                                                                                   Tempio di Eldin"; break;
-        case 206 : texte = "                    Livello 6 :                                                                                Colosseo dei Mostri"; break;
-        case 207 : texte = "                    Livello 7 :                                                                                  Tempio di Lanayru"; break;
-        case 208 : texte = "                    Livello 8 :                                                                                   Tempio di Zelda"; break;
-        case 209 : texte = "                   Livello 10 :                                                                                    Tempio di Din"; break;
-        case 210 : texte = "                   Livello 11 :                                                                                   Tempio di Nayru"; break;
-        case 211 : texte = "                   Livello 12 :                                                                                   Tempio di Farore"; break;
+                   texte = "                   Livello 9 :                                                                                  Casa Stregata";
+            else   texte = "                   Livello 4 :                                                                                  Casa Stregata"; break;
+        case 205 : texte = "                   Livello 5 :                                                                                 Tempio di Eldin"; break;
+        case 206 : texte = "                   Livello 6 :                                                                               Colosseo dei Mostri"; break;
+        case 207 : texte = "                   Livello 7 :                                                                                Tempio di Lanayru"; break;
+        case 208 : texte = "                   Livello 8 :                                                                                 Tempio di Zelda"; break;
+        case 209 : texte = "                  Livello 10 :                                                                                  Tempio di Din"; break;
+        case 210 : texte = "                  Livello 11 :                                                                                 Tempio di Nayru"; break;
+        case 211 : texte = "                  Livello 12 :                                                                                 Tempio di Farore"; break;
         case 212 : 
             if (gpJeu->getJoueur()->getX()>14*320) {id=191; chercheText();break;}
-                   texte = "                   Livello 13 :                                                                                   Tempio di Xanto"; break;
-        case 213 : texte = "                    Livello ? :                                                                                   Tempio Segreto"; break;
-        case 214 : texte = "                  Livello Finale :                                                                                 Torre del Destino"; break;
-        case 215 : texte = "                 Già stanco?                                    CONTINUA                                     Salva ed esci                               Esci senza salvare            "; break;
-        case 216 : texte = "                 Già stanco?                                    Continua                                     SALVA ED ESCI                               Esci senza salvare            "; break;
-        case 217 : texte = "                 Già stanco?                                    Continua                                     Salva ed esci                               ESCI SENZA SALVARE            "; break;
-        case 218 : texte = "Dopo la sconfitta di Ganon e la scomparsa del Triforce, la leggenda ci fece credere che fosse giunta la pace...*Ma dietro ogni leggenda, c'è sempre una  realtà ancora piu oscura..."; idsuiv=402; break;
+                   texte = "                  Livello 13 :                                                                                  Tempio di Xanto"; break;
+        case 213 : texte = "                   Livello ? :                                                                                  Tempio Segreto"; break;
+        case 214 : texte = "                Livello Finale :                                                                               Torre del Destino"; break;
+        case 215 : texte = "                  Già stanco?                                     CONTINUA                                     Salva ed esci                               Esci senza salvare            "; break;
+        case 216 : texte = "                  Già stanco?                                     Continua                                     SALVA ED ESCI                               Esci senza salvare            "; break;
+        case 217 : texte = "                  Già stanco?                                     Continua                                     Salva ed esci                               ESCI SENZA SALVARE            "; break;
+        case 218 : texte = "Dopo la sconfitta di Ganon e la scomparsa del Triforce, la leggenda ci fece credere che fosse giunta la pace...*Ma dietro ogni leggenda, c'è sempre una realtà ancora piu oscura..."; idsuiv=402; break;
         case 220 : texte = "Sì... Per di qua... *Siamo quasi arrivati..."; idsuiv=221; break;
         case 221 : texte = "Mi dispiace che non puoi portare con te armi... Ma vedi... Potresti trasformarti in qualsiasi istante...*E' troppo pericoloso..."; idsuiv=222; break;
         case 222 : texte = "Siamo arrivati! Eccoci!*Non muoverti, preparo il portale...**Sei pronto?"; break;
@@ -963,7 +963,7 @@ case 4: //Italian
         case 252 : texte = "Questa maledizione deve essere tremendamente potente... Ma ad un'attento esame, non tutto è perduto..."; idsuiv=253; break;
         case 253 : texte = "Il Graal ti ha fatto qualcosa, probabilmente lo hai notato.*Ora impieghi meno tempo per trasformarti."; idsuiv=254; break;
         case 254 : texte = "Ma ha anche un contro-effetto... Quando sei trasformato, rimani tale per un tempo maggiore..."; idsuiv=255; break;
-        case 255 : texte = "Ascoltami attentamente, Link. Ci sono altri 4 graal nei tempi di Termina...*Si pensa che una volta combinati, diventano potenti tanto quanto il Triforce."; idsuiv=256; break;
+        case 255 : texte = "Ascoltami attentamente, Link. Ci sono altri 4 graal nei tempi di Termina...*Si pensa che una volta combinati, diventino potenti tanto quanto il Triforce."; idsuiv=256; break;
         case 256 : texte = "Grazie al graal che hai trovato, sei leggermente meno pericoloso, perciò ti autorizzo ad esplorare Termina liberamente."; idsuiv=257; break;
         case 257 : texte = "Avventurati oltre la foresta, cerca e trova i graal e sarai salvo.*Ma non devi entrare in un villaggio se sei trasformato."; idsuiv=258; break;
         case 258 : texte = "Prendi questa mappa, ti tornerà sicuramente utile...*Buona fortuna!"; break;
@@ -992,7 +992,7 @@ case 4: //Italian
             if (gpJeu->getJoueur()->getAvancement()==69) {id=282; chercheText();break;}
             texte = "Link... c'è una cosa che avrei dovuto dirti fin dall'inizio...*Questo mondo, Termina..."; idsuiv=277; break;
         case 277 : texte = "Questo mondo è giovane, è una creazione del Triforce per via di un desiderio... Le persone, le loro memorie e le loro storie sono anche loro creazioni..."; idsuiv=278; break;
-        case 278 : texte = "Sì... come immaginabi, ho chiesto io al Triforce di creare questo mondo... E' un mondo creato per contenere tutto quello di cui potremmo aver bisogno."; idsuiv=279; break;
+        case 278 : texte = "Sì... come immaginavi, ho chiesto io al Triforce di creare questo mondo... E' un mondo creato per contenere tutto quello di cui potremmo aver bisogno."; idsuiv=279; break;
         case 279 : texte = "Tu hai trovato i graal, Oni-Link ha trovato il suo maestro e Ganon ha trovato...*...il Triforce..."; idsuiv=280; break;
         case 280 : texte = "Ho creato questo mondo per usarlo come nascondiglio per il Triforce, ma Ganon lo ha trovato..."; idsuiv=281; break;
         case 281 : texte = "Link! Questa terra e i loro abitanti son stati creati, ma sono reali ora! Se non facciamo nulla, questa terra diventerà presto come il vecchio Mondo Oscuro!"; idsuiv=282; break;
@@ -1197,11 +1197,11 @@ case 4: //Italian
         case 393 : texte = "Guida : quando il misuratore di rabbia è pieno, ti trasformi in Oni-Link.*La tua arma si estende e la tua forza aumenta a discapito della difesa."; idsuiv=394; break;
         case 394 : texte = "Nei panni di Oni-Link, non puoi usare oggetti, ma puoi teletrasportarti all'entrata di un dungeon premendo L ed R."; idsuiv=395; break;
         case 395 : texte = "Ogni volta che Oni-Link sconfigge un nemico, il misuratore si svuota un po'. Quando è vuoto, Link riacquista la sua forma originale."; break;
-        case 396 : texte = "Team leader, creatore e programmatore :                                                                         Vincent Jouillat"; break;
+        case 396 : texte = "Team leader, creatore e programmatore :                                                                  Vincent Jouillat"; break;
         case 397 : texte = "Scrittore e traduttore:                                                                                      Lobaluz"; break;
-        case 398 : texte = "Aiuto nella Grafica :                                                                                          Harvestland"; break;
-        case 399 : texte = "Aiuto nella Grafica :                                                                                        Solène Jouillat"; break;
-        case 400 : texte = "Illustratore :                                                                                                      Raiden"; break;
+        case 398 : texte = "Aiuto nella Grafica :                                                                                      Harvestland"; break;
+        case 399 : texte = "Aiuto nella Grafica :                                                                                    Solène Jouillat"; break;
+        case 400 : texte = "Illustratore :                                                                                                Raiden"; break;
         case 401 : texte = "Hai trovato la mappa di Termina!!!**Premi Start all'esterno per consultarla."; break;
         case 402 : texte = "La leggenda non accenna al fatto che dopo questi eventi, l'eroe fu colpito da una terribile maledizione..."; idsuiv=403; break;
         case 403 : texte = "Giorno dopo giorno, Link si stava trasformando in un mostro spietato ed incontrollabile di nome Oni-Link..."; idsuiv=404; break;
@@ -1405,7 +1405,7 @@ case 5: // Spanish
             texte = "Venciste el monstruo de la mina ??? *Felicitaciones!!!"; idsuiv=144; break;
         case 144 : texte = "Soy el jefe de los obreros, dices que estabas buscándome?"; idsuiv=145; break;
         case 145 : texte = "Toma esta bolsa llena de bombas, debería ayudarte."; break;
-        case 146 : texte = "Has encontrado la Bolsa de Bombas !!!*Y está llena !!!*Pulsa Y equiparlas, y después X para poner una."; break;
+        case 146 : texte = "Has encontrado la Bolsa de Bombas !!!*Y está llena !!!*Pulsa Y para poner una."; break;
         case 147 : texte = "Has encontrado los Guantes !!!**Ahora puedes levantar las piedras ligeras pulsando X."; break;
         case 148 : 
             if (gpJeu->getJoueur()->hasObjet(O_ARC)) {id=50; chercheText();break;}
@@ -1995,7 +1995,7 @@ default:
             texte = "You defeated the monster of the mine???*Congratulations!!!"; idsuiv=144; break;
         case 144 : texte = "I am the chief of the workers, you say you were looking for me?"; idsuiv=145; break;
         case 145 : texte = "Take this bag full of bomb, it may help you."; break;
-        case 146 : texte = "You find the Bomb Bag!!!*And it's full!!!*Press Y to set them up, and X to put one down."; break;
+        case 146 : texte = "You find the Bomb Bag!!!*And it's full!!!*Press Y to put one down."; break;
         case 147 : texte = "You find the Gloves!!!**Now you can lift light stones by pressing X."; break;
         case 148 : 
             if (gpJeu->getJoueur()->hasObjet(O_ARC)) {id=50; chercheText();break;}
